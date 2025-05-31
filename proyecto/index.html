@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Web</title>
+    <link rel="stylesheet" href="../proyecto/src/style.css">
+</head>
+<body>
+    <!-- Menú Superior -->
+    <header>
+        <h1 id="branding">ApiNumbers</h1>
+        <nav>
+            <button onclick="mostrarSeccion('principal')">Inicio</button>
+            <button onclick="mostrarSeccion('numeroVida')">Numero de vida</button>
+            <button onclick="mostrarSeccion('buscador')">Buscador</button>
+
+        </nav>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main id="contenedor-principal">
+        <section id="principal">
+          <h2>Descubre una curiosidad</h2>
+          <input type="number" id="numero" placeholder="Escribe un número..." />
+          <button onclick="consultarNumero()">Consultar</button>
+          <p id="resultado"></p>
+        </section>
+    
+        <section id="favoritos" style="display: none;">
+          <h2>Favoritos</h2>
+          <ul id="listaFavoritos"></ul>
+        </section>
+    
+        <section id="formulario" style="display: none;">
+          <h2>Contacto</h2>
+          <form id="contactoForm">
+            <input type="text" id="nombre" placeholder="Nombre" required />
+            <input type="email" id="correo" placeholder="Correo" required />
+            <textarea id="mensaje" placeholder="Mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+          </form>
+          <p id="mensajeExito"></p>
+        </section>
+    
+        <section id="acerca" style="display: none;">
+          <h2>Acerca de Nosotros</h2>
+          <p>
+            Esta aplicación fue creada para ofrecer curiosidades numéricas de manera sencilla y educativa. Conectada a la Numbers API, permite explorar datos interesantes sobre cualquier número.
+          </p>
+          <p>
+            Además, puedes enviar tus comentarios desde el formulario o guardar tus curiosidades favoritas. ¡Esperamos que disfrutes la experiencia!
+          </p>
+        </section>
+        <section id="buscador" style="display: none;">
+          <h2>Buscar Curiosidad</h2>
+          <input type="number" id="numeroBuscado" placeholder="Ingresa un número" />
+          <button onclick="buscarCuriosidad()">Buscar</button>
+          <p id="resultadoBusqueda"></p>
+        </section>
+        <section id="numeroVida">
+          <h2>Descubre tu número de vida</h2>
+        
+          <label for="fechaNacimiento">Ingresa tu fecha de nacimiento:</label><br />
+          <input type="date" id="fechaNacimiento" />
+          <button onclick="calcularNumeroVida()">Calcular</button>
+        
+          <p id="resultadoNumeroVida"></p>
+        </section>
+        <section id="lista" style="display: none;">
+            <div id="contenedor-principal">
+              <h2>Curiosidades de la API</h2>
+              <div id="listaCuriosidades">
+                <p>Cargando datos desde la API...</p>
+              </div>
+            </div>
+          </section>
+          
+          
+    
+          <!-- Firebase SDK -->
+    <!-- Firebase App -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    
+    <!-- Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+    
+    
+
+      </main>
+
+    <!-- Pie de Página -->
+    <footer>
+        <button onclick="mostrarSeccion('favoritos')">Favoritos</button>
+
+        <button onclick="mostrarSeccion('formulario')">Formulario</button>
+        <button onclick="mostrarSeccion('acerca')">Acerca de Nosotros</button>
+        <button onclick="mostrarLista('lista')">Lista</button>
+
+        <p>&copy; 2025 ApiNumbers. Todos los derechos reservados.</p>
+    </footer>
+
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4CAF50" />
+    <div id="app"></div>
+        <script src="../proyecto/src/main.js"></script>
+
+</body>
+</html>
+
+
+
